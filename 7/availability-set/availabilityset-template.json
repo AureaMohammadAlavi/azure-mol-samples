@@ -106,7 +106,8 @@
       "location": "[variables('location')]",
       "copy": {
         "name": "vmcopy",
-        "count": "[parameters('vmCount')]"
+        "count": "[parameters('vmCount')]",
+	"mode": "serial"
       },
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', concat(variables('nicName'), copyIndex()))]"
